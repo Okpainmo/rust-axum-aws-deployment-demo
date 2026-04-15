@@ -1,0 +1,11 @@
+[app]
+name = "rust-axum-aws-deployment-demo"
+
+[server]
+host = "127.0.0.1"
+port = 8000
+request_timeout_secs = 60
+
+[observability]
+enable_tracing = true
+enable_metrics = true
