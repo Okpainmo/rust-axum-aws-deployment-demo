@@ -1,0 +1,8 @@
+[alias]
+# Default (native Linux/macOS)
+dev = "watch -c -w src -w config -x run" # with config
+# dev = "watch -c -w src -x run" # without config
+
+# Fallback for WSL / Windows filesystem (polling required)
+dev-wsl = "watch --poll -c -w src -w config -x run" # with config
+# dev-wsl = "watch --poll -c -w src -x run" # without config
