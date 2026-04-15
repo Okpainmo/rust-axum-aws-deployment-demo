@@ -1,0 +1,9 @@
+# target
+/target
+
+# env files 
+.env
+.env.*
+!.env.sample
+!.env.*.sample
+!.env.example
