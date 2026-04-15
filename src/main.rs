@@ -67,7 +67,7 @@ async fn main() {
         .server
         .as_ref()
         .map(|s| s.host.as_str())
-        .unwrap_or("127.0.0.1");
+        .unwrap_or("0.0.0.0");
 
     let port = state.config.server.as_ref().map(|s| s.port).unwrap_or(8000);
 
