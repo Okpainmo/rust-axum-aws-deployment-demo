@@ -20,7 +20,7 @@ This repository serves as a blueprint for deploying Rust services to AWS. It dem
 
 ## Getting Started
 
-> Before anything, ensure that you machine is setup to run Rust programs. If not, follow the instructions on the [Rust's official website](https://www.rust-lang.org/tools/install) to install Rust and get set.
+> Before anything, ensure that your machine is set up to run Rust programs. If not, follow the instructions on [Rust's official website](https://www.rust-lang.org/tools/install) to make the necessary installations and get set.
 
 ### Prerequisites
 
