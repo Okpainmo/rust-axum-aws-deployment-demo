@@ -73,6 +73,8 @@ cargo install cargo-watch
 
 ## API Documentation
 
+> Postman collection for the API [is available here](/rust-axum-aws-deployment-demo.postman_collection.json)
+
 ### 1. Base API Status
 
 - **Endpoint:** `/`

@@ -1,0 +1,74 @@
+{
+  "info": {
+    "_postman_id": "6e5ee7b7-a571-464d-b2f4-3b416550050d",
+    "name": "rust-axum-aws-deployment-demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25201008",
+    "_collection_link": "https://go.postman.co/collection/25201008-6e5ee7b7-a571-464d-b2f4-3b416550050d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "base",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZW1haWwiOiJva3BhaW5tb2FuZHJld0BnbWFpbC5jb20iLCJleHAiOjE3NjY0MDU4NDEsImlhdCI6MTc2NjQwMjI0MTAxN30.bOhb2pvsSyOCin10U7hBjvzbAkvLhsGo685opi_5FG0"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\r\n        \"user_email\": \"okpainmoandrew@gmail.com\"\r\n    }"
+        },
+        "url": {
+          "raw": "{{BASE__8000}}/",
+          "host": [
+            "{{BASE__8000}}"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE__8000}}/health",
+          "host": [
+            "{{BASE__8000}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "me",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE__8000}}/me",
+          "host": [
+            "{{BASE__8000}}"
+          ],
+          "path": [
+            "me"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
