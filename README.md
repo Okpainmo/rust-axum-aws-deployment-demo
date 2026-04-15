@@ -71,6 +71,36 @@ cargo install cargo-watch
 
    The API will be available at `http://127.0.0.1:8000`.
 
+### Build For Deployment  
+
+1. **Create Optimized Binary:**
+
+   ```bash
+   cargo build --release
+   ```
+
+2. **Run the Optimized Binary - Test Locally:**
+
+   ```bash
+   ./target/release/rust_axum_aws_deployment_demo
+   ```
+
+3. **Copy the binary and config setup to your server**
+
+From your local machine:
+
+E.g. 
+
+```bash
+scp -r config target/release/rust_axum_aws_deployment_demo <your-vm-username>@<your-vm-ip>:<desired-path-to-push-to>
+
+# If you use a key:
+
+scp -i ~/.ssh/your_key.pem -r config target/release/rust_axum_aws_deployment_demo <your-vm-username>@<your-vm-ip>:<desired-path-to-push-to>
+```
+
+4. Proceed to finish the binary deployment.
+
 ## API Documentation
 
 > Postman collection for the API [is available here](/rust-axum-aws-deployment-demo.postman_collection.json)
