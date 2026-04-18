@@ -1,6 +1,6 @@
 # Rust Axum AWS Deployment Demo
 
-A robust demo project showcasing the deployment of a high-performance Rust backend application on AWS infrastructure. This project leverages the [Axum](https://github.com/tokio-rs/axum) framework and the [Tokio](https://tokio.rs/) runtime to provide a scalable and efficient API template.
+A robust demo project showcasing the deployment of a high-performance Rust API server/binary on AWS infrastructure. This project leverages the [Axum](https://github.com/tokio-rs/axum) framework and the [Tokio](https://tokio.rs/) runtime to provide a scalable and efficient API template.
 
 > The deployment of this project is documented as a tutorial on my blog. Follow this link to [read the tutorial](https://okpainmo.github.io/blog/categories/cloud-and-devops/end-to-end-rust-back-end-binary-deployment-on-aws-ec2).
 
