@@ -1,22 +1,31 @@
 # Rust Axum AWS Deployment Demo
 
-A robust demonstration project showcasing the deployment of a high-performance Rust backend application on AWS infrastructure. This project leverages the [Axum](https://github.com/tokio-rs/axum) framework and the [Tokio](https://tokio.rs/) runtime to provide a scalable and efficient API template.
+A robust demo project showcasing the deployment of a high-performance Rust backend application on AWS infrastructure. This project leverages the [Axum](https://github.com/tokio-rs/axum) framework and the [Tokio](https://tokio.rs/) runtime to provide a scalable and efficient API template.
 
-## Live URL
+> The deployment of this project is documented as a tutorial on my blog. Follow this link to [read the tutorial](https://okpainmo.github.io/blog/categories/cloud-and-devops/end-to-end-rust-back-end-binary-deployment-on-aws-ec2).
 
-The project is deployed and accessible at: **[https://api.xentoprotocol.xyz](https://api.xentoprotocol.xyz)**
+![Blog Screenshot](/public/img-1.png)
+![Blog Screenshot](/public/img-2.png)
 
 ## Project Overview
 
-This repository serves as a blueprint for deploying Rust services to AWS. It demonstrates best practices for:
+Despite being only a demo project, the codebase is packed with standard practices that you can apply on production-grade rust codebases. It demonstrates:
 
-- Asynchronous request handling with Axum.
-
-- Environment-based configuration management.
+- A standard environment-based configuration management.
 
 - Structured logging and observability.
 
+- Asynchronous request handling with Axum.
+
 - Cloud-ready architectural patterns.
+
+- More...
+
+## Live URL
+
+The project is deployed and accessible at: **[https://api.xentoprotocol.xyz](https://api.xentoprotocol.xyz)**.
+
+> This project is only meant to serve as a tutorial/guide. The live deployment via the above URL can be dropped at any time.
 
 ## Getting Started
 
@@ -36,10 +45,10 @@ cargo install cargo-watch
 
 1. **Clone the repository:**
 
-   ```bash
-   git clone https://github.com/Okpainmo/rust-axum-aws-deployment-demo.git
-   cd rust-axum-aws-deployment-demo
-   ```
+    ```bash
+    git clone https://github.com/Okpainmo/rust-axum-aws-deployment-demo.git
+    cd rust-axum-aws-deployment-demo
+    ```
 
 2. **Configure Environment:**
 
@@ -55,53 +64,61 @@ cargo install cargo-watch
     cp .env.development.sample .env.development
     ```
 
+    **Production Environment File**
+
+    ```bash
+    cp .env.production.sample .env.production
+    ```
+
 3. **Run the Server:**
 
-   For development with hot-reloading:
+    For development with hot-reloading:
 
-   ```bash
-   cargo dev
-   ```
+    ```bash
+    cargo dev
+    ```
 
-   For a standard run:
+    > `cargo dev` is an alias of the `cargo run` command. As defined in `.cargo/config.toml`, it integrates `cargo-watch` to provide hot-reloading while you're in dev mode.
 
-   ```bash
-   cargo run
-   ```
+    The API will be available at `http://localhost:8000`.
 
-   The API will be available at `http://127.0.0.1:8000`.
-
-### Build For Deployment  
+### Build & Deployment  
 
 1. **Create Optimized Binary:**
 
-   ```bash
-   cargo build --release
-   ```
+    ```bash
+    cargo build --release
+    ```
 
 2. **Run the Optimized Binary - Test Locally:**
 
-   ```bash
-   ./target/release/rust_axum_aws_deployment_demo
-   ```
+    ```bash
+    ./target/release/rust_axum_aws_deployment_demo
+    ```
 
 3. **Copy the binary and config setup to your server**
 
-From your local machine:
+    From your local machine:
 
-E.g. 
+    E.g. 
 
-```bash
-scp -r config target/release/rust_axum_aws_deployment_demo <your-vm-username>@<your-vm-ip>:<desired-path-to-push-to>
+    ```bash
+    scp -r config target/release/rust_axum_aws_deployment_demo <your-vm-username>@<your-vm-ip>:<desired-path-to-push-to>
 
-# If you use a key:
+    # If you use a key:
 
-scp -i ~/.ssh/your_key.pem -r config target/release/rust_axum_aws_deployment_demo <your-vm-username>@<your-vm-ip>:<desired-path-to-push-to>
-```
+    scp -i ~/.ssh/your_key.pem -r config target/release/rust_axum_aws_deployment_demo <your-vm-username>@<your-vm-ip>:<desired-path-to-push-to>
+    ```
 
-4. Proceed to finish the binary deployment.
+4. Proceed to finish the binary deployment [following the steps in the tutorial](/blog/categories/cloud-and-devops/end-to-end-rust-back-end-binary-deployment-on-aws-ec2).
+
+![Blog Screenshot](/public/img-3.png)
+![Blog Screenshot](/public/img-4.png)
+![Blog Screenshot](/public/img-5.png)
 
 ## API Documentation
+
+To keep things straightforward and uncomplicated, the API exposes only three simple end-points.
 
 > Postman collection for the API [is available here](/rust-axum-aws-deployment-demo.postman_collection.json)
 
