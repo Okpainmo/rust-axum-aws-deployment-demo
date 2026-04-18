@@ -8,11 +8,11 @@ A robust demo project showcasing the deployment of a high-performance Rust API s
 
 ## Project Overview
 
-Despite being only a demo project, the codebase is packed with best practices that you can apply on production-grade rust codebases. It demonstrates:
+Even though this is just a demo project, the codebase is deliberately structured with patterns you’d expect in a production-grade Rust system. It showcases:
 
 - Standard environment-based configuration management.
 
-- Structured logging and observability.
+- Structured logging for observability.
 
 - Asynchronous request handling with Axum.
 
@@ -34,7 +34,7 @@ The API server/binary is deployed and accessible at: **[https://api.xentoprotoco
 
 ### Prerequisites
 
-- [Rust](https://www.rust-lang.org/tools/install)(latest stable)
+- [rust](https://www.rust-lang.org/tools/install)(latest stable)
 
 - [cargo-watch](https://github.com/watchexec/cargo-watch)(recommended for development)
 
@@ -111,7 +111,7 @@ cargo install cargo-watch
     scp -i ~/.ssh/your_key.pem -r config target/release/rust_axum_aws_deployment_demo <your-vm-username>@<your-vm-ip>:<desired-path-to-push-to>
     ```
 
-4. **Proceed to finish the binary deployment [following the steps in the tutorial](/blog/categories/cloud-and-devops/end-to-end-rust-back-end-binary-deployment-on-aws-ec2)**.
+4. **Proceed to finish the deployment [following the steps in the tutorial](/blog/categories/cloud-and-devops/end-to-end-rust-back-end-binary-deployment-on-aws-ec2)**.
 
 ![Blog Screenshot](/public/img-3.png)
 ![Blog Screenshot](/public/img-4.png)
