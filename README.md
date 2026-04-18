@@ -5,13 +5,12 @@ A robust demo project showcasing the deployment of a high-performance Rust backe
 > The deployment of this project is documented as a tutorial on my blog. Follow this link to [read the tutorial](https://okpainmo.github.io/blog/categories/cloud-and-devops/end-to-end-rust-back-end-binary-deployment-on-aws-ec2).
 
 ![Blog Screenshot](/public/img-1.png)
-![Blog Screenshot](/public/img-2.png)
 
 ## Project Overview
 
-Despite being only a demo project, the codebase is packed with standard practices that you can apply on production-grade rust codebases. It demonstrates:
+Despite being only a demo project, the codebase is packed with best practices that you can apply on production-grade rust codebases. It demonstrates:
 
-- A standard environment-based configuration management.
+- Standard environment-based configuration management.
 
 - Structured logging and observability.
 
@@ -21,15 +20,17 @@ Despite being only a demo project, the codebase is packed with standard practice
 
 - More...
 
-## Live URL
+![Blog Screenshot](/public/img-2.png)
 
-The project is deployed and accessible at: **[https://api.xentoprotocol.xyz](https://api.xentoprotocol.xyz)**.
+## Live API
 
-> This project is only meant to serve as a tutorial/guide. The live deployment via the above URL can be dropped at any time.
+The API server/binary is deployed and accessible at: **[https://api.xentoprotocol.xyz](https://api.xentoprotocol.xyz)**.
+
+> This project is only meant to serve as a tutorial/guide. Hence, the live deployment via the above URL can become unavailable at any time.
 
 ## Getting Started
 
-> Before anything, ensure that your machine is set up to run Rust programs. If not, follow the instructions on [Rust's official website](https://www.rust-lang.org/tools/install) to make the necessary installations and get set.
+> Before anything, ensure that your machine is ready to run Rust programs. If not, follow the instructions on [Rust's official website](https://www.rust-lang.org/tools/install) to make the necessary installations first.
 
 ### Prerequisites
 
@@ -50,21 +51,21 @@ cargo install cargo-watch
     cd rust-axum-aws-deployment-demo
     ```
 
-2. **Configure Environment:**
+2. **Environment Variables Files Setup:**
 
-    **Base Environment File**
+    - Base Environment File
 
     ```bash
     cp .env.sample .env
     ```
 
-    **Development Environment File**
+    - Development Environment File
 
     ```bash
     cp .env.development.sample .env.development
     ```
 
-    **Production Environment File**
+    - Production Environment File
 
     ```bash
     cp .env.production.sample .env.production
@@ -80,7 +81,7 @@ cargo install cargo-watch
 
     > `cargo dev` is an alias of the `cargo run` command. As defined in `.cargo/config.toml`, it integrates `cargo-watch` to provide hot-reloading while you're in dev mode.
 
-    The API will be available at `http://localhost:8000`.
+    The API will be available at `http://localhost:8080`.
 
 ### Build & Deployment  
 
@@ -110,7 +111,7 @@ cargo install cargo-watch
     scp -i ~/.ssh/your_key.pem -r config target/release/rust_axum_aws_deployment_demo <your-vm-username>@<your-vm-ip>:<desired-path-to-push-to>
     ```
 
-4. Proceed to finish the binary deployment [following the steps in the tutorial](/blog/categories/cloud-and-devops/end-to-end-rust-back-end-binary-deployment-on-aws-ec2).
+4. **Proceed to finish the binary deployment [following the steps in the tutorial](/blog/categories/cloud-and-devops/end-to-end-rust-back-end-binary-deployment-on-aws-ec2)**.
 
 ![Blog Screenshot](/public/img-3.png)
 ![Blog Screenshot](/public/img-4.png)
